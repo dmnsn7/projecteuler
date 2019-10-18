@@ -1,0 +1,14 @@
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-9
+      - python3
+      - clang
+
+install:
+  - pip3 install cpplint
+
+script:
+  - ./.travis.sh
