@@ -12,7 +12,7 @@ const int M = 5;
 
 int main() {
   map<string, pair<int, int64_t>> m;
-  int64_t target;
+  int64_t target = 0;
   for (int i = 0; i < N; i++) {
     int64_t num = (int64_t)i * i * i;
     string s = to_string(num);

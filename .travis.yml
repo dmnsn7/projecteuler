@@ -4,11 +4,11 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-9
-      - python3
-      - clang
 
 install:
-  - pip3 install cpplint
+  - pip install cpplint
+  - pip install yapf
+  - pip install pylint
 
 script:
   - ./.travis.sh

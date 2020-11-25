@@ -13,26 +13,26 @@ const int N = 10000;
 const int K = 5;
 
 vector<int> prime;
-set<pair<int, int>> s;
+set<pair<int, int>> S;
 vector<int> v;
 int min_sum, sum;
 
 vector<int> prime_sieve(int n) {
-  vector<bool> is_prime(n, true);
-  vector<int> prime;
+  vector<bool> is_p(n, true);
+  vector<int> p;
   for (int i = 2; i < n; i++) {
-    if (is_prime[i]) {
-      prime.push_back(i);
+    if (is_p[i]) {
+      p.push_back(i);
     }
-    for (int j = 0; j < prime.size() && i * prime[j] < n; j++) {
-      is_prime[prime[j] * i] = false;
-      if (i % prime[j] == 0) {
+    for (int j = 0; j < p.size() && i * p[j] < n; j++) {
+      is_p[p[j] * i] = false;
+      if (i % p[j] == 0) {
         break;
       }
     }
   }
 
-  return prime;
+  return p;
 }
 
 bool is_prime(int n) {
@@ -86,7 +86,7 @@ void dfs() {
   for (int i = lb; i < prime.size(); i++) {
     bool flag = true;
     for (int j = 0; j < v.size() && flag; j++) {
-      flag = flag && s.find(make_pair(v[j], prime[i])) != s.end();
+      flag = flag && S.find(make_pair(v[j], prime[i])) != S.end();
     }
     if (flag) {
       v.push_back(prime[i]);
@@ -103,7 +103,7 @@ int main() {
   for (int i = 0; i < prime.size(); i++) {
     for (int j = i; j < prime.size(); j++) {
       if (is_ok(prime[i], prime[j])) {
-        s.insert(make_pair(prime[i], prime[j]));
+        S.insert(make_pair(prime[i], prime[j]));
       }
     }
   }

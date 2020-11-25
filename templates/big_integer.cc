@@ -1,8 +1,7 @@
-// Copyright [2017] <dmnsn7@gmail.com>
-
+// Copyright [2020] <dmnsn7@gmail.com>
 #include <bits/stdc++.h>
 
-const int N = 100;
+using std::vector;
 
 struct BIGINT {
   std::vector<int> data;
@@ -50,20 +49,4 @@ struct BIGINT {
   }
 };
 
-int main() {
-  BIGINT a(1), b(2);
-  for (int i = 0; i < N - 1; i++) {
-    int c = i % 3 != 1 ? 1 : (i / 3 + 1) * 2;
-    a = a + b * c;
-    std::swap(a, b);
-  }
-
-  int add_up = 0;
-  for (int i = 0; i < b.data.size(); i++) {
-    add_up += b.data[i];
-  }
-
-  printf("%d\n", add_up);
-
-  return 0;
-}
+int main() { return 0; }

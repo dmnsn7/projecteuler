@@ -13,7 +13,7 @@ const char VALUE[] = "23456789TJQKA";
 const char SUIT[] = "CDHS";
 
 int value_to_int(char c) {
-  int ans;
+  int ans = 0;
   for (int i = 0; i < strlen(VALUE); i++) {
     if (VALUE[i] == c) {
       ans = i;
@@ -25,7 +25,7 @@ int value_to_int(char c) {
 }
 
 int suit_to_int(char c) {
-  int ans;
+  int ans = 0;
   for (int i = 0; i < strlen(SUIT); i++) {
     if (SUIT[i] == c) {
       ans = i;

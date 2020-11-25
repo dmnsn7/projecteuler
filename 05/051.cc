@@ -42,9 +42,9 @@ vector<string> get_pattern(int n) {
     string sm, sl, so;
     int m;
     for (int j = 0; j < sn.length(); j++) {
-      sm += i & (1 << j) ? sn[j] : '0';
-      sl += i & (1 << j) ? sn[j] : '*';
-      so += i & (1 << j) ? '*' : sn[j];
+      sm += (i & (1 << j)) ? sn[j] : '0';
+      sl += (i & (1 << j)) ? sn[j] : '*';
+      so += (i & (1 << j)) ? '*' : sn[j];
     }
     sscanf(sm.c_str(), "%d", &m);
     if (is_ok(so)) {

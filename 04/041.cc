@@ -11,21 +11,21 @@ const int M = 100000;
 vector<int> prime;
 
 vector<int> prime_sieve(int n) {
-  vector<bool> is_prime(n, true);
-  vector<int> prime;
+  vector<bool> is_p(n, true);
+  vector<int> p;
   for (int i = 2; i < n; i++) {
-    if (is_prime[i]) {
-      prime.push_back(i);
+    if (is_p[i]) {
+      p.push_back(i);
     }
-    for (int j = 0; j < prime.size() && prime[j] * i < n; j++) {
-      is_prime[prime[j] * i] = false;
-      if (i % prime[j] == 0) {
+    for (int j = 0; j < p.size() && p[j] * i < n; j++) {
+      is_p[p[j] * i] = false;
+      if (i % p[j] == 0) {
         break;
       }
     }
   }
 
-  return prime;
+  return p;
 }
 
 bool is_prime(int n) {
